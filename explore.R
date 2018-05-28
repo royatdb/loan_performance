@@ -4,10 +4,6 @@ library(ggplot2)
 
 SparkR:::sparkR.session()
 
-#system("git config --global user.email \"debajyoti.roy@databricks.com\"")
-#system("git config --global user.name \"royatdb\"")
-#system("git config remote.origin.url git@github.com:royatdb/loan_performance.git")
-
 
 performance <- read.df("/mnt/roy/loan_performance_parquet/Performance_All", source = "parquet")
 performance %>% count()
