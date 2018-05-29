@@ -7,9 +7,11 @@ SparkR:::sparkR.session()
 #system("git config --global user.email \"debajyoti.roy@databricks.com\"")
 #system("git config --global user.name \"royatdb\"")
 
-
+#performance
 performance <- read.df("/mnt/roy/loan_performance_parquet/Performance_All", source = "parquet")
 performance %>% count()
+
+
 
 acquisition <- read.df("/mnt/roy/loan_performance_parquet/Acquisition_All", source = "parquet") %>% 
   withColumn("orig_year", substr(.$orig_dte,5,8))
